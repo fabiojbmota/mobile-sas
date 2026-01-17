@@ -6,7 +6,7 @@ export default function BeneficiariosScreen() {
   const [alunos, setAlunos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ⚠️ Confirma se o IP ainda é o mesmo
+  // IP local do pc
   const API_URL = 'http://192.168.1.152:3000/beneficiarios'; 
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 2,
     borderLeftWidth: 4,
-    borderLeftColor: '#4CAF50', // Um toque de cor verde IPCA
+    borderLeftColor: '#4CAF50', // verde IPCA
   },
   headerCard: {
     flexDirection: 'row',
