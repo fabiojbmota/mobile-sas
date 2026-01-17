@@ -1,35 +1,31 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Tabs } from 'expo-router';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: '#2f95dc' }}>
+      
+      {/* Tab 1: Stock (Home) */}
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Stock',
+          tabBarIcon: ({ color }) => <FontAwesome size={24} name="cubes" color={color} />,
+          headerShown: false, // Esconde o cabeçalho se quiseres usar o título da tua página
         }}
       />
+
+      {/* Tab 2: Beneficiários (Nova) */}
       <Tabs.Screen
-        name="explore"
+        name="beneficiarios"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Estudantes',
+          tabBarIcon: ({ color }) => <FontAwesome size={24} name="users" color={color} />,
+          headerShown: false,
         }}
       />
+      
     </Tabs>
   );
 }
